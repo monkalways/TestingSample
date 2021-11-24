@@ -11,5 +11,10 @@ namespace TestingSample.Web.BusinessLogic
         {
             return x + y;
         }
+
+        public int MultiplyInts(int x, int y)
+        {
+            return x * y;
+        }
     }
 }
