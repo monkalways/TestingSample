@@ -17,13 +17,13 @@ namespace TestingSample.Web.Data
             var artists = new Artist[]
             {
                 new Artist{ArtistName="The Mandevilles"},
+                new Artist{ArtistName="The Hip"},
                 new Artist{ArtistName="Fifty Diamond Rocks"},
-                new Artist{ArtistName="The Razorbax"}
+                new Artist{ArtistName="The Stones"}
             };
 
             context.Artists.AddRange(artists);
             context.SaveChanges();
-
 
         }
     }
