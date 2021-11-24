@@ -43,6 +43,7 @@ namespace TestingSample.Tests
             {
                 // using Integrated Security for local testing
                 _output.WriteLine("Using local SQL Server...");
+
                 connectionString = $"Server=(localdb)\\mssqllocaldb;Database=" + databaseName + ";Trusted_Connection=True;MultipleActiveResultSets=true";
                 output.WriteLine("Connection String to remoted SQL Server: " + connectionString);
             }
@@ -50,10 +51,12 @@ namespace TestingSample.Tests
             {
                 // using SQL authentication (username/password)  for remote database (GitHub Actions Service Container)
                 _output.WriteLine("Using Remote SQL Server...");
+
                 var serverName = config["Database:Server"] + "," + config["Database:Port"];
                 var userName = config["Database:UserId"];
                 var password = config["Database:Password"];
                 connectionString = "Server=" + serverName + ";Database=" + databaseName + ";User Id=" + userName + ";Password=" + password;
+                
                 output.WriteLine("Connection String to remoted SQL Server: " + connectionString);
             }
 
@@ -63,6 +66,7 @@ namespace TestingSample.Tests
             _context = new MusicCatalogContext(builder.Options);
             _context.Database.EnsureCreated();
             DbInitializer.Initialize(_context);
+
             _output.WriteLine("Database successfully initialized.  Database name: " + databaseName);
         }
 
@@ -76,7 +80,7 @@ namespace TestingSample.Tests
             _output.WriteLine("Results returned: " + artistResults.Count);
             _output.WriteLine("Name of first artist: " + artistResults[0].ArtistName);
 
-            Assert.Equal(2, artistResults.Count);
+            Assert.Equal(3, artistResults.Count);
 
         }
 
