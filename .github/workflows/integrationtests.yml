@@ -35,5 +35,5 @@ jobs:
           dotnet build --configuration 'release'
           
       - name: Run Unit and Integration Tests
-        run: dotnet test --no-restore --verbosity normal
+        run: dotnet test --logger "console;verbosity=detailed"
           
