@@ -44,7 +44,7 @@ namespace TestingSample.Tests
             {
                 // using standard (username/password) SQL authentication for remote database (GitHub Actions Service Container)
                 // Connection string for remote database: Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;
-                var serverName = config["Database:Server"];
+                var serverName = config["Database:Server"] + "," + config["Database:Port"];
                 var userName = config["Database:UserId"];
                 var password = config["Database:Password"];
                 connectionString = "Server=" + serverName + ";Database=" + databaseName + ";User Id=" + userName + ";Password=" + password;
