@@ -1,10 +1,6 @@
 name: Run Integration Tests with Database
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
   workflow_dispatch:
 
 jobs:
@@ -13,7 +9,8 @@ jobs:
     
     env:
       Database__IntegratedSecurity: "false"
-      Database__Server: "false"
+      Database__Server: "sqlserver"
+      Database__Port: "1433"
       Database__UserId: "SA"
       Database__Password: "P@ssword1$"
       
