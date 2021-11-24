@@ -76,7 +76,7 @@ namespace TestingSample.Tests
             _output.WriteLine("Results returned: " + artistResults.Count);
             _output.WriteLine("Name of first artist: " + artistResults[0].ArtistName);
 
-            Assert.Equal(3, artistResults.Count);
+            Assert.Equal(2, artistResults.Count);
 
         }
 
